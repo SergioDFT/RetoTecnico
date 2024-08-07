@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "37228424-acda-4bd9-81aa-b53d2fb6b4b4",
+		"name": "WebScraping",
+		"description": "Se ha realizado un postman collection para el ejercicio 1, para el cual se han utilizado las siguientes tecnologías:\n\n- .NET 8\n    \n- .NET CORE\n    \n- Entity Framework en .NET Core\n    \n- SQL Server\n    \n- Microsoft Azure (servidor y base de datos en la nube)\n    \n\nLa decision de software para la implementación de código es la siguiente:\n\n- .NET 8: Ofrece mejoras significativas en rendimiento y eficiencia en comparación con versiones anteriores. La inclusión de nuevas optimizaciones y características hace que las aplicaciones se ejecuten más rápido y consuman menos recursos.\n    \n- .NET CORE: Debido a que es un conocido por su alto rendimiento y capacidad para manejar cargas de trabajo intensivas. Es una plataforma modular, lo que permite optimizar las aplicaciones para que usen solo las bibliotecas necesarias.\n    \n- Entity Framework en .NET Core: EF permite trabajar con bases de datos utilizando objetos y clases .NET, lo que simplifica enormemente el acceso y manipulación de datos. Esto reduce la cantidad de código SQL necesario y facilita la escritura y mantenimiento del código.\n    \n- SQL Server: Se integra perfectamente con el ecosistema de .NET, proporcionando una solución cohesiva para el desarrollo de aplicaciones de backend.\n    \n- Microsoft Azure: Azure permite escalar aplicaciones y bases de datos fácilmente para manejar aumentos en la carga de trabajo. Ofrece una amplia gama de servicios gestionados que pueden ajustarse según las necesidades del proyecto.\n    \n\nPara la presente entrega se han creado 2 tipos de peticion de get (una api de tipo get que obtiene todo y un api de tipo get que hace una busqueda en la base de datos de la cadena de texto) para cada una de las fuentes encontradas en la base de datos (se puso una peticion correcta a ejemplo de que encuentra el texto buscado y una en donde no lo encuentra).\n\nLas peticion estan en un servidor de krestel alojadas en el puerto 5001. El acceso a la base de datos esta en la nube en Azure, las credenciales para acceder desde SQL Server son las siguientes:\n\nServidor: webscrapingserver.database.windows.net\n\nTipo de autenticación: SQL Server Authentication\n\nLogin: webscrapingadmin\n\nPassword: enterFLOR-30\n\nPara poder tener acceso se pediria que mande un correo a mi personal [sergio.david.flores.tavara@gmail.com](https://mailto:sergio.david.flores.tavara@gmail.com) colocando en asunto \"Acceso a la nube\", para poder levantar el firewall para la nueva direccion ip donde se desee hacer las pruebas de funcionalidad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37425880"
+	},
+	"item": [
+		{
+			"name": "OfacSdn",
+			"item": [
+				{
+					"name": "OfacSdn/GetAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/OfacSdn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"OfacSdn"
+							]
+						},
+						"description": "Peticion de tipo GET sin parametros de busqueda en la tabla OfacSdn"
+					},
+					"response": []
+				},
+				{
+					"name": "OfacSdn/GetBadString",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/OfacSdn/dsfasfafa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"OfacSdn",
+								"dsfasfafa"
+							]
+						},
+						"description": "Peticion de tipo GET con parametros de busqueda en la tabla OfacSdn en la columna Nombre, haciendo ejemplo de una busqueda sin resultados."
+					},
+					"response": []
+				},
+				{
+					"name": "OfacSdn/GetGoodString",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/OfacSdn/ank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"OfacSdn",
+								"ank"
+							]
+						},
+						"description": "Peticion de tipo GET con parametros de busqueda en la tabla OfacSdn en la columna Nombre, haciendo ejemplo de una busqueda con resultados."
+					},
+					"response": []
+				}
+			],
+			"description": "Se realizaron 2 REST API para la base de datos importada de OFAC SDN list a la base de datos, las cuales tiene los campos:\n\n- Nombre\n    \n- Tipo\n    \n- Programa\n    \n- Comentario\n    \n\nLa primera API con una peticion GET obtiene los primeros 1000 resultados de la tabla OfacSdn:\n\n- http://localhost:5001/api/OfacSdn\n    \n\n<img src=\"https://content.pstmn.io/095fc8e7-7dff-476c-8d96-9b7c495be7ed/aW1hZ2UucG5n\" alt=\"query%20usado%20para%20la%20seleccion%20del%20top%201000%20filas\" width=\"1288\" height=\"626\">\n\nPor otro lado, la segunda API hace una peticion de tipo GET en el que hace busqueda del String incluido en la ruta en la tabla de OfacSdn:\n\n- http://localhost:5001/api/OfacSdn/{string}\n    \n\n<img src=\"https://content.pstmn.io/0bc0bbe6-e515-4c87-ae21-ee3c3c4947a8/aW1hZ2UucG5n\" alt=\"query%20utilizado%20para%20la%20busqueda%20del%20string\" width=\"1338\" height=\"634\">\n\nLa busqueda se hara sin importar si el resultado esta en minusculas o mayusculas y tampoco si el string incluido esta en mayusculas o minusculas.\n\nCon efectos de poder visualizar un ejemplo de una peticion la cual no encuentre ninguna busqueda se puso la petición OfacSdn/GetBadString y en forma de prueba de un caso donde si se encuentre se uso OfacSdn/GetGoodString, en caso de encontrar resultados solo se mostraran el top 1000 de peticiones para que no se rompa la peticion o tener problemas con la carga a la base de datos."
+		},
+		{
+			"name": "OffshoreLeak",
+			"item": [
+				{
+					"name": "OffshoreLeak/GetAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/OffshoreLeak",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"OffshoreLeak"
+							]
+						},
+						"description": "Peticion de tipo GET sin parametros de busqueda en la tabla OffshoreLeak"
+					},
+					"response": []
+				},
+				{
+					"name": "OffshoreLeak/GetBadString",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/OffshoreLeak/dsfasfafa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"OffshoreLeak",
+								"dsfasfafa"
+							]
+						},
+						"description": "Peticion de tipo GET con parametros de busqueda en la tabla OffshoreLeak en la columna Nombre, haciendo ejemplo de una busqueda sin resultados."
+					},
+					"response": []
+				},
+				{
+					"name": "OffshoreLeak/GetGoodString",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/OffshoreLeak/ank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"OffshoreLeak",
+								"ank"
+							]
+						},
+						"description": "Peticion de tipo GET con parametros de busqueda en la tabla OffshoreLeak en la columna Nombre, haciendo ejemplo de una busqueda con resultados."
+					},
+					"response": []
+				}
+			],
+			"description": "Se realizaron 2 REST API para la base de datos importada de Offshore Leak a la base de datos, las cuales tiene los campos:\n\n- Nombre\n    \n- Pais\n    \n- Relacionado\n    \n- Fuente\n    \n\nLa primera API con una peticion GET obtiene los primeros 1000 resultados de la tabla OfacSdn:\n\n- [http://localhost:5001/api/OffshoreLeak](http://localhost:5001/api/OffshoreLeak)\n    \n\n<img src=\"https://content.pstmn.io/d1c62e77-eae3-41b5-9032-98e467a8d78d/aW1hZ2UucG5n\" alt=\"query%20usado%20para%20la%20seleccion%20del%20top%201000%20filas\" width=\"1342\" height=\"636\">\n\nPor otro lado, la segunda API hace una peticion de tipo GET en el que hace busqueda del String incluido en la ruta en la tabla de OfacSdn:\n\n- [http://localhost:5001/api/OffshoreLeak/{string}](http://localhost:5001/api/OffshoreLeak/{string})\n    \n\n<img src=\"https://content.pstmn.io/a9ce511d-3cc4-4026-bb03-48eca4b36ff0/aW1hZ2UucG5n\" alt=\"query%20utilizado%20para%20la%20busqueda%20del%20string\" width=\"1338\" height=\"636\">\n\nLa busqueda se hara sin importar si el resultado esta en minusculas o mayusculas y tampoco si el string incluido esta en mayusculas o minusculas.\n\nCon efectos de poder visualizar un ejemplo de una peticion la cual no encuentre ninguna busqueda se puso la petición OffshoreLeak/GetBadString y en forma de prueba de un caso donde si se encuentre se uso OffshoreLeak/GetGoodString, en caso de encontrar resultados solo se mostraran el top 1000 de peticiones para que no se rompa la peticion o tener problemas con la carga a la base de datos."
+		},
+		{
+			"name": "WorldBankGroup",
+			"item": [
+				{
+					"name": "WorldBankGroup/GetAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/WorldBankGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"WorldBankGroup"
+							]
+						},
+						"description": "Peticion de tipo GET sin parametros de busqueda en la tabla WorldBankGroup."
+					},
+					"response": []
+				},
+				{
+					"name": "WorldBankGroup/GetBadString",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/WorldBankGroup/dsfasfafa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"WorldBankGroup",
+								"dsfasfafa"
+							]
+						},
+						"description": "Peticion de tipo GET con parametros de busqueda en la tabla WorldBankGroup en la columna Nombre, haciendo ejemplo de una busqueda sin resultados."
+					},
+					"response": []
+				},
+				{
+					"name": "WorldBankGroup/GetGoodString",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validar que la respuesta sea 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/WorldBankGroup/ank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"WorldBankGroup",
+								"ank"
+							]
+						},
+						"description": "Peticion de tipo GET con parametros de busqueda en la tabla WorldBankGroup en la columna Nombre, haciendo ejemplo de una busqueda con resultados."
+					},
+					"response": []
+				}
+			],
+			"description": "Se realizaron 2 REST API para la base de datos importada de World Bank Group a la base de datos, las cuales tiene los campos:\n\n- Nombre\n    \n- Pais\n    \n- Relacionado\n    \n- Fuente\n    \n\nLa primera API con una peticion GET obtiene los primeros 1000 resultados de la tabla OfacSdn:\n\n- http://localhost:5001/api/WorldBankGroup\n    \n\n<img src=\"https://content.pstmn.io/18eccd5c-eb92-4094-b384-2a2de31fb4aa/aW1hZ2UucG5n\" alt=\"query%20usado%20para%20la%20seleccion%20del%20top%201000%20filas\" width=\"1351\" height=\"636\">\n\nPor otro lado, la segunda API hace una peticion de tipo GET en el que hace busqueda del String incluido en la ruta en la tabla de WorldBankGroup:\n\n- http://localhost:5001/api/WorldBankGroup/{string}\n    \n\n<img src=\"https://content.pstmn.io/a9ce511d-3cc4-4026-bb03-48eca4b36ff0/aW1hZ2UucG5n\" alt=\"query%20utilizado%20para%20la%20busqueda%20del%20string\" width=\"1338\" height=\"636\">\n\nLa busqueda se hara sin importar si el resultado esta en minusculas o mayusculas y tampoco si el string incluido esta en mayusculas o minusculas.\n\nCon efectos de poder visualizar un ejemplo de una peticion la cual no encuentre ninguna busqueda se puso la petición OffshoreLeak/GetBadString y en forma de prueba de un caso donde si se encuentre se uso OffshoreLeak/GetGoodString, en caso de encontrar resultados solo se mostraran el top 1000 de peticiones para que no se rompa la peticion o tener problemas con la carga a la base de datos."
+		}
+	]
+}

@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|c:\\users\\sergio\\documents\\sergio\\reto tecnico\\ejercicio 1\\codigo fuente\\webscraping\\webscraping\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|solutionrelative:webscraping\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|c:\\users\\sergio\\documents\\sergio\\reto tecnico\\ejercicio 1\\codigo fuente\\webscraping\\webscraping\\controllers\\ofacsdncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|solutionrelative:webscraping\\controllers\\ofacsdncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|c:\\users\\sergio\\documents\\sergio\\reto tecnico\\ejercicio 1\\codigo fuente\\webscraping\\webscraping\\models\\webscrapingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|solutionrelative:webscraping\\models\\webscrapingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|c:\\users\\sergio\\documents\\sergio\\reto tecnico\\ejercicio 1\\codigo fuente\\webscraping\\webscraping\\controllers\\offshoreleakcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|solutionrelative:webscraping\\controllers\\offshoreleakcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|c:\\users\\sergio\\documents\\sergio\\reto tecnico\\ejercicio 1\\codigo fuente\\webscraping\\webscraping\\controllers\\worldbankgroupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17D727E-F895-482F-92E2-8A15A215620E}|WebScraping\\WebScraping.csproj|solutionrelative:webscraping\\controllers\\worldbankgroupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OfacSdnController.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Controllers\\OfacSdnController.cs",
+              "RelativeDocumentMoniker": "WebScraping\\Controllers\\OfacSdnController.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Controllers\\OfacSdnController.cs",
+              "RelativeToolTip": "WebScraping\\Controllers\\OfacSdnController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T02:15:37.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WorldBankGroupController.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Controllers\\WorldBankGroupController.cs",
+              "RelativeDocumentMoniker": "WebScraping\\Controllers\\WorldBankGroupController.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Controllers\\WorldBankGroupController.cs",
+              "RelativeToolTip": "WebScraping\\Controllers\\WorldBankGroupController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T02:15:22.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OffshoreLeakController.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Controllers\\OffshoreLeakController.cs",
+              "RelativeDocumentMoniker": "WebScraping\\Controllers\\OffshoreLeakController.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Controllers\\OffshoreLeakController.cs",
+              "RelativeToolTip": "WebScraping\\Controllers\\OffshoreLeakController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwBwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T02:13:46.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Program.cs",
+              "RelativeDocumentMoniker": "WebScraping\\Program.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Program.cs",
+              "RelativeToolTip": "WebScraping\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T07:15:05.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WebscrapingDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Models\\WebscrapingDbContext.cs",
+              "RelativeDocumentMoniker": "WebScraping\\Models\\WebscrapingDbContext.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\Sergio\\Reto tecnico\\Ejercicio 1\\Codigo fuente\\WebScraping\\WebScraping\\Models\\WebscrapingDbContext.cs",
+              "RelativeToolTip": "WebScraping\\Models\\WebscrapingDbContext.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAowBoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T06:18:01.962Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+Para el despligue del back end en .net se deben seguir las siguientes pautas:
+
+Las peticion estan en un servidor de krestel alojadas en el puerto 5221 (en caso de ejecutarse en un diferente puerte debera cambiar el archivo appsetings del front-end). El acceso a la base de datos esta en la nube en Azure, las credenciales para acceder desde SQL Server son las siguientes:
+
+Servidor: webscrapingserver.database.windows.net
+Tipo de autenticación: SQL Server Authentication
+Login: webscrapingadmin
+Password: enterFLOR-30
+
+Para poder tener acceso se pediria que mande un correo a mi personal sergio.david.flores.tavara@gmail.com colocando en asunto "Acceso a la nube", para poder levantar el firewall para la nueva direccion ip donde se desee hacer las pruebas de funcionalidad.
+
+
+Para el despligue del front end en vite usando react se deben seguir las siguientes pautas:
+
+Configuración de archivo appsetings.ts con el puerto de ejecución del back-end, ejecucion de la instalación de dependencias (npm install). Si se desea replicar el proyecto, fueron las siguientes las usadas:
+
+-vite (Framework: React y Variante: TypeScript + SWC)
+-bootstrap
+-reactstrap
+-react-router-dom
+-sweetalert

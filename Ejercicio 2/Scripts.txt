@@ -1,0 +1,4 @@
+Para el back-end se utilizo migraciones de la base de datos en nube mediante dbContext usando el siguiente script en el package manager console:
+Scaffold-DbContext "Server=tcp:webscrapingserver.database.windows.net,1433;Initial Catalog=webscrapingDB;Persist Security Info=False;User ID=webscrapingadmin;Password=enterFLOR-30;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;" Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models
+
+A la par se utilizo Microsoft.EntityFrameworkCore.SqlServer y Microsoft.EntityFrameworkCore.Tools en el levantamiento del back-end en .net
